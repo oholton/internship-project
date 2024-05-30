@@ -25,9 +25,14 @@ class MainPage(Base):
         sleep(5)
 
     def verify_tag_last_units(self):
+        expected_text = "Last units"
         lastunit_elements = self.find_elements(*self.LAST_UNITS_TAG)
-        for text in lastunit_elements:
-            self.verify_text("Last units", *self.LAST_UNITS_TAG)
+        for tag in lastunit_elements:
+            print(f"Verifying element text: {tag.text}")
+            assert expected_text == tag.text, f"Expected {expected_text} but got {tag.text}"
+
+
+
 
 
 
