@@ -1,6 +1,8 @@
 from pages.base_page import Base
 from selenium.webdriver.common.by import By
 from time import sleep
+from support.logger import logger
+
 
 class MainPage(Base):
     OFFLEFT = (By.XPATH, "//div[text()='Off-plan']")
@@ -11,7 +13,7 @@ class MainPage(Base):
 
 
     def offleft(self):
-        self.click(*self.OFFLEFT)
+        self.wait_to_click(*self.OFFLEFT)
 
     def search_filters(self):
         self.click(*self.FILTER_ICON)
@@ -20,7 +22,7 @@ class MainPage(Base):
         self.verify_text("Total projects", *self.TITLE)
 
     def filter_by_last_unit(self):
-        self.click(*self.FILTER_ICON)
+        self.wait_to_click(*self.FILTER_ICON)
         self.wait_to_click(*self.FILTER_LAST_UNITS_BUTTON)
         sleep(5)
 

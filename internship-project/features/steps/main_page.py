@@ -16,7 +16,6 @@ def click_offleft(context):
 @then('Verify the right page opens')
 def verify_offleft(context):
     context.app.main_page.verify_offleft_page()
-    sleep(3)
 
 @then('Filter by sale status of “Last Units”')
 def filter_last_units(context):

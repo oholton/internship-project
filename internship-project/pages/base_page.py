@@ -2,6 +2,8 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 
+from support.logger import logger
+
 class Base:
 
     def __init__(self, driver):
@@ -9,6 +11,7 @@ class Base:
         self.wait = WebDriverWait(self.driver, 10)
 
     def open(self, url):
+        logger.info(f"Opening {url}")
         self.driver.get(url)
 
     def find_element(self, *locator):
@@ -18,7 +21,9 @@ class Base:
     def find_elements(self, *locator):
         self.driver.find_elements(*locator)
         return self.driver.find_elements(*locator)
+
     def click(self, *locator):
+        logger.info(f"Clicking {locator}")
         self.find_element(*locator).click()
 
     def store_current_window(self):
@@ -54,6 +59,7 @@ class Base:
         self.wait.until(EC.url_matches(expected_url))
 
     def wait_to_click(self, *locator):
+        logger.info(f"Waiting for {locator} to appear")
         self.wait.until(EC.element_to_be_clickable((locator))).click()
 
     def close(self):
