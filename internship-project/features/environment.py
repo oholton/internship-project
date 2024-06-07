@@ -8,6 +8,10 @@ from selenium.webdriver.chrome.options import Options
 from support.logger import logger
 from app.application import Application
 
+#to run Behave Allure
+#behave -f allure_behave.formatter:AllureFormatter -o test_results ./features
+
+
 
 def browser_init(context, scenario_name):
     """
@@ -36,19 +40,19 @@ def browser_init(context, scenario_name):
 
     ### BROWSERSTACK ###
     # Register for BrowserStack, then grab it from http://www.browserstack.com/accounts/settings
-    bs_user = 'oscarholton_d7givp'
-    bs_key = 'cUP1rygoqb4yrH2KDkLV'
-    url = f'https://{bs_user}:{bs_key}@hub-cloud.browserstack.com/wd/hub'
-
-    options = Options()
-    bstack_options = {
-        'os': 'OS X',
-        'osVersion': 'Monterey',
-        'browserName': 'Chrome',
-        'sessionName': scenario_name
-    }
-    options.set_capability('bstack:options', bstack_options)
-    context.driver = webdriver.Remote(command_executor=url, options=options)
+    # bs_user = 'oscarholton_d7givp'
+    # bs_key = 'cUP1rygoqb4yrH2KDkLV'
+    # url = f'https://{bs_user}:{bs_key}@hub-cloud.browserstack.com/wd/hub'
+    #
+    # options = Options()
+    # bstack_options = {
+    #     'os': 'OS X',
+    #     'osVersion': 'Monterey',
+    #     'browserName': 'Chrome',
+    #     'sessionName': scenario_name
+    # }
+    # options.set_capability('bstack:options', bstack_options)
+    # context.driver = webdriver.Remote(command_executor=url, options=options)
 
 
 
