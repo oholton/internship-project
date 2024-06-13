@@ -9,3 +9,11 @@ Feature: Main page
     And Verify the right page opens
     And Filter by sale status of “Last Units”
     And Verify each product contains the Last Units tag
+
+  Scenario: User can filter by sale status Last units on mobile
+    Given Open the main page
+    When Log in to the page
+    Then Click on "off plan" on mobile
+    And Verify the right page opens
+    And Filter by sale status of “Last Units” on mobile
+    And Verify each product contains the Last Units tag

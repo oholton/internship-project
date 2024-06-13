@@ -10,10 +10,23 @@ class MainPage(Base):
     TITLE = (By.XPATH, "//div[text()='Total projects']")
     FILTER_LAST_UNITS_BUTTON = (By.XPATH, "//div[@class='tag-text-proparties' and text()='Last units']")
     LAST_UNITS_TAG = (By.XPATH, "//div[@wized='projectStatus' and @class='_5-comission' and @w-el-text='Status' and text()='Last units']")
+    MOBILE_OFFLEFT = (By.CSS_SELECTOR, 'a[wized="mobileTabProperties"].menu-link.w-inline-block.w--current')
+    MOBILE_FILTER_BTN = (By.CSS_SELECTOR, "div.filter-button")
+    MOBILE_LAST_UNITS_FLT_BTN = (By. XPATH, '//div[@class="tag-text-proparties" and text()="Last units"]')
 
 
     def offleft(self):
         self.wait_to_click(*self.OFFLEFT)
+
+    def mobile_offleft(self):
+        self.wait_to_click(*self.MOBILE_OFFLEFT)
+        sleep(4)
+
+    def mobile_filter(self):
+        self.click(*self.MOBILE_FILTER_BTN)
+        self.wait_to_click(*self.MOBILE_LAST_UNITS_FLT_BTN)
+        sleep(3)
+
 
     def search_filters(self):
         self.click(*self.FILTER_ICON)

@@ -13,6 +13,14 @@ def login(context):
 def click_offleft(context):
     context.app.main_page.offleft()
 
+@then('Click on "off plan" on mobile')
+def click_mobileoffleft(context):
+    context.app.main_page.mobile_offleft()
+
+@then('Filter by sale status of “Last Units” on mobile')
+def filter_mobile(context):
+    context.app.main_page.mobile_filter()
+
 @then('Verify the right page opens')
 def verify_offleft(context):
     context.app.main_page.verify_offleft_page()
