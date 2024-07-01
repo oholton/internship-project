@@ -20,22 +20,22 @@ def browser_init(context, scenario_name):
     :param context: Behave context
     """
     ###CHROME
-    # driver_path = ChromeDriverManager().install()
-    # service = Service(driver_path)
-    # context.driver = webdriver.Chrome(service=service)
+    driver_path = ChromeDriverManager().install()
+    service = Service(driver_path)
+    context.driver = webdriver.Chrome(service=service)
 
     ###MOBILE TESTING###
 
-    if 'mobile' in scenario_name.lower():
-        mobile_emulation = {"deviceName": "Nexus 5"}
-        chrome_options = Options()
-        chrome_options.add_experimental_option("mobileEmulation", mobile_emulation)
-        service = Service(ChromeDriverManager().install())
-        context.driver = webdriver.Chrome(service=service, options=chrome_options)
-    else:
-        driver_path = ChromeDriverManager().install()
-        service = Service(driver_path)
-        context.driver = webdriver.Chrome(service=service)
+    # if 'mobile' in scenario_name.lower():
+    #     mobile_emulation = {"deviceName": "Nexus 5"}
+    #     chrome_options = Options()
+    #     chrome_options.add_experimental_option("mobileEmulation", mobile_emulation)
+    #     service = Service(ChromeDriverManager().install())
+    #     context.driver = webdriver.Chrome(service=service, options=chrome_options)
+    # else:
+    #     driver_path = ChromeDriverManager().install()
+    #     service = Service(driver_path)
+    #     context.driver = webdriver.Chrome(service=service)
 
     ### BROWSER WITH DRIVERS:
     ###FIREFOX

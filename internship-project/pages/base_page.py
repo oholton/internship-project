@@ -64,3 +64,8 @@ class Base:
 
     def close(self):
         self.driver.close()
+
+    def verify_entered_text(self, expected_text, *locator):
+        textfield = self.find_element(*locator)
+        entered_text = textfield.get_attribute("value")
+        assert expected_text in entered_text, f"Expected {expected_text} but got {entered_text}"
