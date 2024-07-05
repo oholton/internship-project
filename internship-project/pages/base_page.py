@@ -29,6 +29,7 @@ class Base:
     def store_current_window(self):
         current_window = self.driver.current_window_handle
         print(f'Current window: {current_window}')
+        print('ALL windows:', self.driver.window_handles)
         return current_window
 
     def switch_to_new_window(self):

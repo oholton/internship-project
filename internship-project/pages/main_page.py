@@ -13,6 +13,8 @@ class MainPage(Base):
     MOBILE_OFFLEFT = (By.CSS_SELECTOR, 'a[wized="mobileTabProperties"].menu-link.w-inline-block.w--current')
     MOBILE_FILTER_BTN = (By.CSS_SELECTOR, "div.filter-button")
     MOBILE_LAST_UNITS_FLT_BTN = (By. XPATH, '//div[@class="tag-text-proparties" and text()="Last units"]')
+    CONNECT_COMPANY_BTN = (By.XPATH, "//div[text()='Connect the company']")
+
 
 
     def offleft(self):
@@ -45,6 +47,13 @@ class MainPage(Base):
         for tag in lastunit_elements:
             print(f"Verifying element text: {tag.text}")
             assert expected_text == tag.text, f"Expected {expected_text} but got {tag.text}"
+
+    def click_connect_company(self):
+        self.store_current_window()
+        self.click(*self.CONNECT_COMPANY_BTN)
+
+    def switch_new_tab(self):
+        self.switch_to_new_window()
 
 
 

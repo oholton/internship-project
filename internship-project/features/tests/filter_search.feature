@@ -17,3 +17,10 @@ Feature: Main page
     And Verify the right page opens
     And Filter by sale status of “Last Units” on mobile
     And Verify each product contains the Last Units tag
+
+  Scenario: User can click on “Connect the company” on the left side of the main page
+    Given Open the main page
+    When Log in to the page
+    And Click on “Connect the company”
+    Then Switch the new tab
+    And Verify the right tab opens
