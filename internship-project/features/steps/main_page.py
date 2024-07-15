@@ -47,3 +47,6 @@ def verify_last_units_tag(context):
 def verify_offleft(context):
     context.app.connect_company.verify_connect_company_open()
 
+@then('Click on "settings" option')
+def click_settings(context):
+    context.app.main_page.click_settings()

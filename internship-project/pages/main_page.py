@@ -14,6 +14,8 @@ class MainPage(Base):
     MOBILE_FILTER_BTN = (By.CSS_SELECTOR, "div.filter-button")
     MOBILE_LAST_UNITS_FLT_BTN = (By. XPATH, '//div[@class="tag-text-proparties" and text()="Last units"]')
     CONNECT_COMPANY_BTN = (By.XPATH, "//div[text()='Connect the company']")
+    SETTINGS = (By.CSS_SELECTOR, "[href='/settings']")
+
 
 
 
@@ -52,8 +54,12 @@ class MainPage(Base):
         self.store_current_window()
         self.click(*self.CONNECT_COMPANY_BTN)
 
+    def click_settings(self):
+        self.wait_to_click(*self.SETTINGS)
+
     def switch_new_tab(self):
         self.switch_to_new_window()
+
 
 
 

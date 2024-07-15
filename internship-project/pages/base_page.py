@@ -63,6 +63,10 @@ class Base:
         logger.info(f"Waiting for {locator} to appear")
         self.wait.until(EC.element_to_be_clickable((locator))).click()
 
+    def wait_for_clickability(self, *locator):
+        logger.info(f"Waiting for {locator} to appear")
+        self.wait.until(EC.element_to_be_clickable((locator)))
+
     def close(self):
         self.driver.close()
 
@@ -70,3 +74,8 @@ class Base:
         textfield = self.find_element(*locator)
         entered_text = textfield.get_attribute("value")
         assert expected_text in entered_text, f"Expected {expected_text} but got {entered_text}"
+
+    def replace_text(self, text, *locator):
+        element = self.find_element(*locator)
+        element.clear()
+        element.send_keys(text)
