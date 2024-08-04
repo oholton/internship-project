@@ -56,8 +56,11 @@ class Base:
 
     def verify_partial_url(self, expected_partial_url):
         self.wait.until(EC.url_contains(expected_partial_url), message=f'Url does not contain {expected_partial_url}')
-    def verify_url(self, expected_url, *locator):
+    def verify_url(self, expected_url):
         self.wait.until(EC.url_matches(expected_url))
+        actual_url = self.driver.current_url
+        assert actual_url == expected_url, f"Expected URL: {expected_url}, but got: {actual_url}"
+
 
     def wait_to_click(self, *locator):
         logger.info(f"Waiting for {locator} to appear")
@@ -66,6 +69,7 @@ class Base:
     def wait_for_clickability(self, *locator):
         logger.info(f"Waiting for {locator} to appear")
         self.wait.until(EC.element_to_be_clickable((locator)))
+        logger.info(f"Element {locator} is clickable")
 
     def close(self):
         self.driver.close()
@@ -74,6 +78,12 @@ class Base:
         textfield = self.find_element(*locator)
         entered_text = textfield.get_attribute("value")
         assert expected_text in entered_text, f"Expected {expected_text} but got {entered_text}"
+
+    def verify_multiple_text_entries(self, *expected_locator_pairs):
+        for expected_text, locator in expected_locator_pairs:
+            textfield = self.find_element(*locator)
+            entered_text = textfield.get_attribute("value")
+            assert entered_text == expected_text, f"Expected '{expected_text}' in {locator} but got '{entered_text}'"
 
     def replace_text(self, text, *locator):
         element = self.find_element(*locator)
