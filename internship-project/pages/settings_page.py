@@ -20,5 +20,5 @@ class SettingsPage(Base):
     def click_community_button(self):
         actions = ActionChains(self.driver)
         actions.send_keys(Keys.PAGE_DOWN).perform()
-        self.click(*self.COMMUNITY_BUTTON)
+        self.wait_to_click(*self.COMMUNITY_BUTTON)
 
