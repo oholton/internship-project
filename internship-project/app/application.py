@@ -5,6 +5,7 @@ from pages.connect_company import ConnectCompanyPage
 from pages.settings_page import SettingsPage
 from pages.profile_page import ProfilePage
 from pages.add_a_project_page import AddProjectPage
+from pages.community_page import CommunityPage
 
 class Application:
     def __init__(self, driver):
@@ -15,6 +16,7 @@ class Application:
         self.settings_page = SettingsPage(driver)
         self.profile_page = ProfilePage(driver)
         self.add_a_project_page = AddProjectPage(driver)
+        self.community_page = CommunityPage(driver)
 
 
 

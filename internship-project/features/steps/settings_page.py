@@ -7,3 +7,7 @@ def click_edit_profile(context):
 @then ('Click on "Add a project" option')
 def click_add_project(context):
     context.app.settings_page.click_add_project_button()
+
+@then ('Click on "community" button')
+def click_community_button(context):
+    context.app.settings_page.click_community_button()

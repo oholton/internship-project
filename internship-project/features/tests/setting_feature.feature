@@ -20,3 +20,13 @@ Feature: Settings
       And Verify the right information in the input fields selected
       And Verify “Send an application” button is available and clickable
 
+  Scenario: User can go to community page and click contact support
+    Given Open the main page
+    When Log in to the page
+    Then Click on "settings" option
+    And Click on "community" button
+    And Verify the community page is open
+    And Verify 'contact support' is clickable
+
+
+

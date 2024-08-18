@@ -1,8 +1,6 @@
 from behave import given, when, then
 from selenium.webdriver.common.by import By
 
-from time import sleep
-
 @given('Open the main page')
 def open_page(context):
     context.app.login_page.open_login()
