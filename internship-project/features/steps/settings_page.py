@@ -11,3 +11,7 @@ def click_add_project(context):
 @then ('Click on "community" button')
 def click_community_button(context):
     context.app.settings_page.click_community_button()
+
+@then ('Click on the "Contact us" option')
+def click_contact_us_button(context):
+    context.app.settings_page.click_contact_us_button()

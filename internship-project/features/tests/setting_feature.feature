@@ -28,5 +28,14 @@ Feature: Settings
     And Verify the community page is open
     And Verify 'contact support' is clickable
 
+  Scenario: User can open the Contact us page
+    Given Open the main page
+    When Log in to the page
+    Then  Click on "settings" option
+    And Click on the "Contact us" option
+    And Verify the correct page opens
+    And Verify there are at least 4 social media icons
+    And Verify the “Connect the company” button is available and clickable
+
 
 
