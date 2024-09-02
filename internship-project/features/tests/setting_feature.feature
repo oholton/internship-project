@@ -31,11 +31,22 @@ Feature: Settings
   Scenario: User can open the Contact us page
     Given Open the main page
     When Log in to the page
-    Then  Click on "settings" option
+    Then Click on "settings" option
     And Click on the "Contact us" option
     And Verify the correct page opens
     And Verify there are at least 4 social media icons
     And Verify the “Connect the company” button is available and clickable
+
+    Scenario: User can open User guide page
+      Given Open the main page
+      When Log in to the page
+      Then Click on "settings" option
+      And Click on "User Guide" option
+      And Verify the "User Guide" page opens
+      And Verify all lesson videos contain titles
+
+
+
 
 
 

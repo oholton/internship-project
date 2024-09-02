@@ -10,6 +10,8 @@ class SettingsPage(Base):
     ADD_PROJECT_BUTTON = (By. CSS_SELECTOR, "[href='/add-a-project']")
     COMMUNITY_BUTTON = (By. XPATH, "//div[@class='setting-text' and text()='Community']")
     CONTACT_US_BUTTON = (By. XPATH, "//div[@class='setting-text' and text()='Contact us']")
+    USER_GUIDE_BTN = (By.XPATH, "//div[@class='setting-text' and text()='User guide']")
+
 
 
     def click_edit_profile_button(self):
@@ -28,4 +30,10 @@ class SettingsPage(Base):
         actions.send_keys(Keys.PAGE_DOWN).perform()
         sleep(2)
         self.wait_to_click(*self.CONTACT_US_BUTTON)
+
+    def click_user_guide(self):
+        actions = ActionChains(self.driver)
+        actions.send_keys(Keys.PAGE_DOWN).perform()
+        sleep(2)
+        self.wait_to_click(*self.USER_GUIDE_BTN)
 

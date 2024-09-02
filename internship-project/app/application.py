@@ -7,6 +7,7 @@ from pages.profile_page import ProfilePage
 from pages.add_a_project_page import AddProjectPage
 from pages.community_page import CommunityPage
 from pages.contact_us_page import ContactUsPage
+from pages.user_guide_page import UserGuidePage
 
 class Application:
     def __init__(self, driver):
@@ -19,6 +20,7 @@ class Application:
         self.add_a_project_page = AddProjectPage(driver)
         self.community_page = CommunityPage(driver)
         self.contact_us_page = ContactUsPage(driver)
+        self.user_guide_page = UserGuidePage(driver)
 
 
 
