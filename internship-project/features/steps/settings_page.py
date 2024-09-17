@@ -15,3 +15,7 @@ def click_community_button(context):
 @then ('Click on the "Contact us" option')
 def click_contact_us_button(context):
     context.app.settings_page.click_contact_us_button()
+
+@then ('Click on Change password option')
+def click_change_password(context):
+    context.app.settings_page.click_change_password_option()

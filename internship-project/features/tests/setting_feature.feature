@@ -45,6 +45,15 @@ Feature: Settings
       And Verify the "User Guide" page opens
       And Verify all lesson videos contain titles
 
+      Scenario: User can change password
+        Given Open the main page
+        When Log in to the page
+        Then Click on "settings" option
+        And Click on Change password option
+        And Verify the change password page opens
+        And Add some test password to the input fields
+        And Verify the “Change password” button is available
+
 
 
 

@@ -11,6 +11,7 @@ class SettingsPage(Base):
     COMMUNITY_BUTTON = (By. XPATH, "//div[@class='setting-text' and text()='Community']")
     CONTACT_US_BUTTON = (By. XPATH, "//div[@class='setting-text' and text()='Contact us']")
     USER_GUIDE_BTN = (By.XPATH, "//div[@class='setting-text' and text()='User guide']")
+    CHANGE_PASSWORD_OPTION = (By. CSS_SELECTOR, '[href="/set-new-password"]')
 
 
 
@@ -36,4 +37,7 @@ class SettingsPage(Base):
         actions.send_keys(Keys.PAGE_DOWN).perform()
         sleep(2)
         self.wait_to_click(*self.USER_GUIDE_BTN)
+
+    def click_change_password_option(self):
+        self.wait_to_click(*self.CHANGE_PASSWORD_OPTION)
 
