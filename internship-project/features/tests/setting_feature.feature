@@ -54,8 +54,10 @@ Feature: Settings
         And Add some test password to the input fields
         And Verify the “Change password” button is available
 
-
-
-
-
-
+    Scenario: User can go to settings and see the right number of UI elements
+      Given Open the main page
+      When Log in to the page
+      Then Click on "settings" option
+      And Verify the right page opens up
+      And Verify that there are 12 options for settings
+      And Verify 'connect to company' button is available

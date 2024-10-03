@@ -19,3 +19,15 @@ def click_contact_us_button(context):
 @then ('Click on Change password option')
 def click_change_password(context):
     context.app.settings_page.click_change_password_option()
+
+@then ('Verify the right page opens up')
+def verify_settings_url(context):
+    context.app.settings_page.verify_settings_url()
+
+@then ('Verify that there are 12 options for settings')
+def verify_setting_options(context):
+    context.app.settings_page.verify_settings_options()
+
+@then ("Verify 'connect to company' button is available")
+def verify_connect_to_company(context):
+    context.app.settings_page.verify_connect_to_company()
