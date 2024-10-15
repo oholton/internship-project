@@ -15,6 +15,8 @@ class MainPage(Base):
     MOBILE_LAST_UNITS_FLT_BTN = (By. XPATH, '//div[@class="tag-text-proparties" and text()="Last units"]')
     CONNECT_COMPANY_BTN = (By.XPATH, "//div[text()='Connect the company']")
     SETTINGS = (By.CSS_SELECTOR, "[href='/settings']")
+    SECONDARY_BUTTON = (By. XPATH, "//div[text()='Secondary']") #$x("//div[text()='Secondary']")
+
 
 
 
@@ -60,7 +62,8 @@ class MainPage(Base):
     def switch_new_tab(self):
         self.switch_to_new_window()
 
-
+    def click_secondary_option(self):
+        self.wait_to_click(*self.SECONDARY_BUTTON)
 
 
 

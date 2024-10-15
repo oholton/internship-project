@@ -9,6 +9,7 @@ from pages.community_page import CommunityPage
 from pages.contact_us_page import ContactUsPage
 from pages.user_guide_page import UserGuidePage
 from pages.change_password_page import ChangePasswordPage
+from pages.secondary_page import SecondaryPage
 
 class Application:
     def __init__(self, driver):
@@ -23,6 +24,7 @@ class Application:
         self.contact_us_page = ContactUsPage(driver)
         self.user_guide_page = UserGuidePage(driver)
         self.change_password_page = ChangePasswordPage(driver)
+        self.secondary_page = SecondaryPage(driver)
 
 
 

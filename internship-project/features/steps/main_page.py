@@ -12,6 +12,9 @@ def login(context):
 @when('Click on “Connect the company”')
 def connect_the_company(context):
     context.app.main_page.click_connect_company()
+@when('Click on Secondary option at the left side menu')
+def click_secondary_option(context):
+    context.app.main_page.click_secondary_option()
 
 @then('Switch the new tab')
 def switch_to_company(context):
