@@ -1,5 +1,7 @@
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
+
 
 
 from support.logger import logger
@@ -89,3 +91,10 @@ class Base:
         element = self.find_element(*locator)
         element.clear()
         element.send_keys(text)
+
+    def click_until_unclickable(self, *locator, pages):
+        for i in range(pages):
+            element = self.wait.until(EC.element_to_be_clickable(*locator))
+            element.click()
+            print(f"Clicked {i + 1} times")
+
